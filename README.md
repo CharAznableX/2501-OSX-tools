@@ -33,7 +33,7 @@ osaurus tools install osaurus.filesystem
 
 ## Plugin Specification
 
-Plugins are distributed as a `.dylib` in a zip file. The manifest is embedded in the plugin binary. Osaurus supports two ABI versions — v1 (tools only) and v2 (tools + routes + config + web + storage). See the [Plugin Authoring Guide](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md) for the full specification.
+Plugins are distributed as a `.dylib` in a zip file. The manifest is embedded in the plugin binary. Osaurus supports two ABI versions — v1 (tools only) and v2 (full host API: routes, config, web, storage, agent dispatch, inference, models, HTTP client). See the [Plugin Authoring Guide](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md) for the full specification.
 
 ### Zip Structure
 
@@ -164,9 +164,9 @@ mycompany.mytool-1.0.0.zip
 
 ## v2 Plugin Capabilities
 
-v2 extends the plugin system with HTTP routes, configuration UI, static web serving, persistent storage, and documentation. These capabilities are declared in the plugin manifest returned by `get_manifest()` and are entirely optional — a v2 plugin can use any combination of them.
+v2 extends the plugin system with a full host API spanning 15 callbacks across 7 capability groups: config store, data store, logging, agent dispatch, inference, models, and HTTP client. Plugins can also declare routes, configuration UI, static web serving, and documentation. These capabilities are entirely optional — a v2 plugin can use any combination of them.
 
-For the full v2 ABI specification (entry points, host API, storage, routes, config), see the [Plugin Authoring Guide](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md).
+For the full v2 ABI specification (entry points, host API callbacks, storage, routes, config, dispatch, inference), see the [Plugin Authoring Guide](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md).
 
 ### Routes
 
@@ -183,6 +183,22 @@ Plugins can ship a frontend (React, Svelte, Vue, vanilla JS) as static files in 
 ### Storage
 
 v2 plugins have two storage tiers: a Keychain-backed config store for secrets and tokens, and a sandboxed per-plugin SQLite database for structured data. Both are accessed through host API callbacks injected at init.
+
+### Agent Dispatch
+
+Plugins can dispatch background agent tasks with full tool access via `host->dispatch(ctx, prompt, config_json)`. Tasks run asynchronously; plugins poll status with `task_status`, cancel with `dispatch_cancel`, and respond to clarification requests with `dispatch_clarify`. Plugins can also implement the `on_task_event(ctx, task_id, event_type, event_json)` callback on `osr_plugin_api` to receive task lifecycle events (progress, completion, failure, clarification needed).
+
+### Inference
+
+Plugins can perform LLM chat completions and generate embeddings through any model configured in Osaurus (local MLX, Apple Foundation Models, or remote providers). Use `host->complete(ctx, model, messages_json, params_json)` for single-shot completions, `host->complete_stream(ctx, model, messages_json, params_json, callback, user_data)` for streaming, and `host->embed(ctx, model, texts_json)` for embedding vectors.
+
+### Models
+
+Plugins can enumerate available models at runtime via `host->list_models(ctx)`, which returns a JSON array of model descriptors including id, provider, and capability tags. This enables dynamic model routing or user-facing model selection within plugin UIs.
+
+### HTTP Client
+
+Plugins can make outbound HTTP requests via `host->http_request(ctx, method, url, headers_json, body)`. Requests are subject to SSRF protection — private/internal IP ranges are blocked by default. This enables plugins to integrate with external APIs, webhooks, and third-party services without bundling their own HTTP stack.
 
 ## Code Signing
 
@@ -410,7 +426,7 @@ osaurus manifest extract build/time/staging/*.dylib | jq .
 2. Implement the plugin using the [C ABI](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md). The manifest is embedded directly in `Plugin.swift` via the `get_manifest` function. See existing tools for examples.
 
    - **v1 plugins** export `osaurus_plugin_entry` — sufficient for tools-only plugins.
-   - **v2 plugins** export `osaurus_plugin_entry_v2(const osr_host_api* host)` — required for routes, config, web, or storage. The v2 ABI is a superset of v1; Osaurus falls back to v1 if the v2 symbol is not found.
+   - **v2 plugins** export `osaurus_plugin_entry_v2(const osr_host_api* host)` — required for routes, config, web, storage, agent dispatch, inference, or HTTP. The host API provides 15 callbacks across 7 capability groups (config store, data store, logging, agent dispatch, inference, models, HTTP client). The v2 ABI is a superset of v1; Osaurus falls back to v1 if the v2 symbol is not found.
 
 3. Build and test:
 
