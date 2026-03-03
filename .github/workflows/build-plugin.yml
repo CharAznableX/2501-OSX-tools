@@ -186,17 +186,16 @@ jobs:
         run: |
           brew install minisign
           printf '%s\n' "$MINISIGN_SECRET_KEY" > $RUNNER_TEMP/minisign.key
-          printf '%s\n' "$MINISIGN_PUBLIC_KEY" > $RUNNER_TEMP/minisign.pub
 
           echo "$MINISIGN_PASSWORD" | minisign -Slm "${{ steps.package.outputs.artifact }}" -s $RUNNER_TEMP/minisign.key
 
-          # Verify the signature
-          minisign -Vm "${{ steps.package.outputs.artifact }}" -p $RUNNER_TEMP/minisign.pub
+          # Verify the signature using -P (public key string) instead of -p (public key file)
+          minisign -Vm "${{ steps.package.outputs.artifact }}" -P "$MINISIGN_PUBLIC_KEY"
           echo "Signature verified successfully"
 
           cp "${{ steps.package.outputs.artifact }}.minisig" build-data/signature.minisig
 
-          rm -f $RUNNER_TEMP/minisign.key $RUNNER_TEMP/minisign.pub
+          rm -f $RUNNER_TEMP/minisign.key
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
