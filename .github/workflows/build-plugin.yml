@@ -185,8 +185,8 @@ jobs:
           MINISIGN_PUBLIC_KEY: ${{ secrets.MINISIGN_PUBLIC_KEY }}
         run: |
           brew install minisign
-          echo "$MINISIGN_SECRET_KEY" > $RUNNER_TEMP/minisign.key
-          echo "$MINISIGN_PUBLIC_KEY" > $RUNNER_TEMP/minisign.pub
+          printf '%s\n' "$MINISIGN_SECRET_KEY" > $RUNNER_TEMP/minisign.key
+          printf '%s\n' "$MINISIGN_PUBLIC_KEY" > $RUNNER_TEMP/minisign.pub
 
           echo "$MINISIGN_PASSWORD" | minisign -Slm "${{ steps.package.outputs.artifact }}" -s $RUNNER_TEMP/minisign.key
 
