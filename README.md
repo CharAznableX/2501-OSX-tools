@@ -1,27 +1,27 @@
-# Osaurus Tools Repository
+# Project2501 Tools Repository
 
-Central registry for community tools and plugins for [Osaurus](https://github.com/osaurus-ai/osaurus).
+Central registry for community tools and plugins for [Project2501](https://github.com/CharAznableX/2501-OSX).
 
 ## Official System Tools
 
 | Plugin ID            | Description                            | Tools                                                                                                                                                                                                                 |
 | -------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `osaurus.time`       | Time and date utilities                | `current_time`, `format_date`                                                                                                                                                                                         |
-| `osaurus.git`        | Git repository utilities               | `git_status`, `git_log`, `git_diff`, `git_branch`                                                                                                                                                                     |
-| `osaurus.browser`    | Agent-friendly headless WebKit browser | `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_select`, `browser_hover`, `browser_scroll`, `browser_press_key`, `browser_wait_for`, `browser_screenshot`, `browser_execute_script` |
-| `osaurus.fetch`      | HTTP client for web requests           | `fetch`, `fetch_json`, `fetch_html`, `download`                                                                                                                                                                       |
-| `osaurus.search`     | Web search via DuckDuckGo              | `search`, `search_news`, `search_images`                                                                                                                                                                              |
-| `osaurus.filesystem` | File system operations                 | `read_file`, `write_file`, `list_directory`, `create_directory`, `delete_file`, `move_file`, `search_files`, `get_file_info`                                                                                          |
+| `project2501.time`       | Time and date utilities                | `current_time`, `format_date`                                                                                                                                                                                         |
+| `project2501.git`        | Git repository utilities               | `git_status`, `git_log`, `git_diff`, `git_branch`                                                                                                                                                                     |
+| `project2501.browser`    | Agent-friendly headless WebKit browser | `browser_navigate`, `browser_snapshot`, `browser_click`, `browser_type`, `browser_select`, `browser_hover`, `browser_scroll`, `browser_press_key`, `browser_wait_for`, `browser_screenshot`, `browser_execute_script` |
+| `project2501.fetch`      | HTTP client for web requests           | `fetch`, `fetch_json`, `fetch_html`, `download`                                                                                                                                                                       |
+| `project2501.search`     | Web search via DuckDuckGo              | `search`, `search_news`, `search_images`                                                                                                                                                                              |
+| `project2501.filesystem` | File system operations                 | `read_file`, `write_file`, `list_directory`, `create_directory`, `delete_file`, `move_file`, `search_files`, `get_file_info`                                                                                          |
 
 ### Installation
 
 ```bash
-osaurus tools install osaurus.time
-osaurus tools install osaurus.git
-osaurus tools install osaurus.browser
-osaurus tools install osaurus.fetch
-osaurus tools install osaurus.search
-osaurus tools install osaurus.filesystem
+project2501 tools install project2501.time
+project2501 tools install project2501.git
+project2501 tools install project2501.browser
+project2501 tools install project2501.fetch
+project2501 tools install project2501.search
+project2501 tools install project2501.filesystem
 ```
 
 ## Adding a Plugin to the Registry
@@ -33,7 +33,7 @@ osaurus tools install osaurus.filesystem
 
 ## Plugin Specification
 
-Plugins are distributed as a `.dylib` in a zip file. The manifest is embedded in the plugin binary. Osaurus supports two ABI versions — v1 (tools only) and v2 (full host API: routes, config, web, storage, agent dispatch, inference, models, HTTP client). See the [Plugin Authoring Guide](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md) for the full specification.
+Plugins are distributed as a `.dylib` in a zip file. The manifest is embedded in the plugin binary. Project2501 supports two ABI versions — v1 (tools only) and v2 (full host API: routes, config, web, storage, agent dispatch, inference, models, HTTP client). See the [Plugin Authoring Guide](https://github.com/project2501-ai/project2501/blob/main/docs/PLUGIN_AUTHORING.md) for the full specification.
 
 ### Zip Structure
 
@@ -95,7 +95,7 @@ mycompany.mytool-1.0.0.zip
       "release_date": "2025-01-01",
       "notes": "Initial release",
       "requires": {
-        "osaurus_min_version": "0.5.0"
+        "project2501_min_version": "0.5.0"
       },
       "artifacts": [
         {
@@ -147,7 +147,7 @@ mycompany.mytool-1.0.0.zip
 | `artifacts`                    | Yes      | List of downloadable binaries    |
 | `release_date`                 | No       | Date string (ISO 8601)           |
 | `notes`                        | No       | Release notes                    |
-| `requires.osaurus_min_version` | No       | Minimum Osaurus version          |
+| `requires.project2501_min_version` | No       | Minimum Project2501 version          |
 
 ### Artifact Entry
 
@@ -165,7 +165,7 @@ mycompany.mytool-1.0.0.zip
 
 v2 extends the plugin system with a full host API spanning 15 callbacks across 7 capability groups: config store, data store, logging, agent dispatch, inference, models, and HTTP client. Plugins can also declare routes, configuration UI, static web serving, and documentation. These capabilities are entirely optional — a v2 plugin can use any combination of them.
 
-For the full v2 ABI specification (entry points, host API callbacks, storage, routes, config, dispatch, inference), see the [Plugin Authoring Guide](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md).
+For the full v2 ABI specification (entry points, host API callbacks, storage, routes, config, dispatch, inference), see the [Plugin Authoring Guide](https://github.com/project2501-ai/project2501/blob/main/docs/PLUGIN_AUTHORING.md).
 
 ### Routes
 
@@ -173,11 +173,11 @@ v2 plugins can register HTTP route handlers for OAuth flows, webhooks, and plugi
 
 ### Configuration UI
 
-Plugins can declare a settings schema rendered natively in the Osaurus Management window. Field types include `text`, `secret`, `toggle`, `select`, `multiselect`, `number`, `readonly`, and `status`.
+Plugins can declare a settings schema rendered natively in the Project2501 Management window. Field types include `text`, `secret`, `toggle`, `select`, `multiselect`, `number`, `readonly`, and `status`.
 
 ### Static Web Serving
 
-Plugins can ship a frontend (React, Svelte, Vue, vanilla JS) as static files in a `web/` directory. Osaurus serves them directly and injects a `window.__osaurus` context object.
+Plugins can ship a frontend (React, Svelte, Vue, vanilla JS) as static files in a `web/` directory. Project2501 serves them directly and injects a `window.__project2501` context object.
 
 ### Storage
 
@@ -189,7 +189,7 @@ Plugins can dispatch background agent tasks with full tool access via `host->dis
 
 ### Inference
 
-Plugins can perform LLM chat completions and generate embeddings through any model configured in Osaurus (local MLX, Apple Foundation Models, or remote providers). Use `host->complete(ctx, model, messages_json, params_json)` for single-shot completions, `host->complete_stream(ctx, model, messages_json, params_json, callback, user_data)` for streaming, and `host->embed(ctx, model, texts_json)` for embedding vectors.
+Plugins can perform LLM chat completions and generate embeddings through any model configured in Project2501 (local MLX, Apple Foundation Models, or remote providers). Use `host->complete(ctx, model, messages_json, params_json)` for single-shot completions, `host->complete_stream(ctx, model, messages_json, params_json, callback, user_data)` for streaming, and `host->embed(ctx, model, texts_json)` for embedding vectors.
 
 ### Models
 
@@ -246,7 +246,7 @@ Your plugin's `get_manifest()` function must return valid JSON with these fields
 | `license`              | No       | License identifier (defaults to `MIT`)                                     |
 | `authors`              | No       | Array of author names (defaults to repo owner)                             |
 | `min_macos`            | No       | Minimum macOS version (defaults to `13.0`)                                 |
-| `min_osaurus`          | No       | Minimum Osaurus version (defaults to `0.5.0`)                              |
+| `min_project2501`          | No       | Minimum Project2501 version (defaults to `0.5.0`)                              |
 | `secrets`              | No       | Array of secret definitions for API keys/credentials                       |
 | `capabilities.routes`  | No       | Array of HTTP route definitions (v2)                                       |
 | `capabilities.config`  | No       | Configuration UI schema rendered in the Management window (v2)             |
@@ -257,7 +257,7 @@ Note: Version is extracted from the Git tag (e.g., `v1.0.0` or `1.0.0`), not fro
 
 ### Plugin Secrets
 
-Plugins that require API keys or other credentials can declare them in the manifest. Osaurus stores secrets securely in the macOS Keychain and prompts users to configure them during installation.
+Plugins that require API keys or other credentials can declare them in the manifest. Project2501 stores secrets securely in the macOS Keychain and prompts users to configure them during installation.
 
 **Declaring Secrets in Manifest:**
 
@@ -298,7 +298,7 @@ Plugins that require API keys or other credentials can declare them in the manif
 
 **Accessing Secrets in Swift:**
 
-When a tool is invoked, Osaurus automatically injects configured secrets into the payload under the `_secrets` key:
+When a tool is invoked, Project2501 automatically injects configured secrets into the payload under the `_secrets` key:
 
 ```swift
 func run(args: String) -> String {
@@ -315,7 +315,7 @@ func run(args: String) -> String {
 
     // Get the API key from secrets
     guard let apiKey = input._secrets?["api_key"] else {
-        return "{\"error\": \"API key not configured. Please configure secrets in Osaurus settings.\"}"
+        return "{\"error\": \"API key not configured. Please configure secrets in Project2501 settings.\"}"
     }
 
     // Use the API key for requests
@@ -326,7 +326,7 @@ func run(args: String) -> String {
 
 **User Experience:**
 
-- When a plugin with secrets is installed, Osaurus prompts the user to configure them
+- When a plugin with secrets is installed, Project2501 prompts the user to configure them
 - If required secrets are missing, a "Needs API Key" badge appears on the plugin card
 - Users can configure or edit secrets anytime via the plugin menu → "Configure Secrets"
 - Secrets are stored securely in the macOS Keychain
@@ -345,7 +345,7 @@ on:
 
 jobs:
   release:
-    uses: osaurus-ai/osaurus-tools/.github/workflows/build-plugin.yml@master
+    uses: project2501-ai/project2501-tools/.github/workflows/build-plugin.yml@master
     secrets: inherit
 ```
 
@@ -386,7 +386,7 @@ The workflow will:
 3. Code sign with Apple Developer ID
 4. Sign the artifact with minisign
 5. Create a GitHub Release with the artifact
-6. Submit a PR to the osaurus-tools registry
+6. Submit a PR to the project2501-tools registry
 
 ## Development
 
@@ -405,7 +405,7 @@ Build output goes to `build/<tool-name>/`. The `--version` flag is required.
 To extract and verify the manifest from a built plugin:
 
 ```bash
-osaurus manifest extract build/time/staging/*.dylib | jq .
+project2501 manifest extract build/time/staging/*.dylib | jq .
 ```
 
 ### Creating a New Tool
@@ -415,23 +415,23 @@ osaurus manifest extract build/time/staging/*.dylib | jq .
    ```
    tools/mytool/
    ├── Package.swift
-   ├── Sources/OsaurusMytool/Plugin.swift
+   ├── Sources/Project2501Mytool/Plugin.swift
    ├── SKILL.md               # Optional: AI skill guidance
    ├── README.md              # Optional: displayed in plugin detail UI
    ├── CHANGELOG.md           # Optional: displayed in Changelog tab
    └── web/                   # Optional: static frontend assets (v2)
    ```
 
-2. Implement the plugin using the [C ABI](https://github.com/osaurus-ai/osaurus/blob/main/docs/PLUGIN_AUTHORING.md). The manifest is embedded directly in `Plugin.swift` via the `get_manifest` function. See existing tools for examples.
+2. Implement the plugin using the [C ABI](https://github.com/project2501-ai/project2501/blob/main/docs/PLUGIN_AUTHORING.md). The manifest is embedded directly in `Plugin.swift` via the `get_manifest` function. See existing tools for examples.
 
-   - **v1 plugins** export `osaurus_plugin_entry` — sufficient for tools-only plugins.
-   - **v2 plugins** export `osaurus_plugin_entry_v2(const osr_host_api* host)` — required for routes, config, web, storage, agent dispatch, inference, or HTTP. The host API provides 15 callbacks across 7 capability groups (config store, data store, logging, agent dispatch, inference, models, HTTP client). The v2 ABI is a superset of v1; Osaurus falls back to v1 if the v2 symbol is not found.
+   - **v1 plugins** export `project2501_plugin_entry` — sufficient for tools-only plugins.
+   - **v2 plugins** export `project2501_plugin_entry_v2(const osr_host_api* host)` — required for routes, config, web, storage, agent dispatch, inference, or HTTP. The host API provides 15 callbacks across 7 capability groups (config store, data store, logging, agent dispatch, inference, models, HTTP client). The v2 ABI is a superset of v1; Project2501 falls back to v1 if the v2 symbol is not found.
 
 3. Build and test:
 
    ```bash
    ./scripts/build-tool.sh mytool --version 1.0.0
-   osaurus tools install ./build/mytool/osaurus.mytool-1.0.0.zip
+   project2501 tools install ./build/mytool/project2501.mytool-1.0.0.zip
    ```
 
    The build script automatically includes `SKILL.md`, `README.md`, `CHANGELOG.md`, and `web/` in the zip if they exist in the tool directory.

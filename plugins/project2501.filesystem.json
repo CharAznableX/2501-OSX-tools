@@ -1,10 +1,10 @@
 {
-  "plugin_id": "osaurus.filesystem",
-  "name": "Osaurus Filesystem",
+  "plugin_id": "project2501.filesystem",
+  "name": "Project2501 Filesystem",
   "description": "Secure file system operations for reading, writing, and managing files and directories",
-  "homepage": "https://github.com/osaurus-ai/osaurus-tools",
+  "homepage": "https://github.com/CharAznableX/2501-OSX-tools",
   "license": "MIT",
-  "authors": ["Osaurus Team"],
+  "authors": ["Project2501 Team"],
   "capabilities": {
     "tools": [
       {

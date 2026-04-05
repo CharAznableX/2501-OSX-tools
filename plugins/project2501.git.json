@@ -1,10 +1,10 @@
 {
-  "plugin_id": "osaurus.git",
-  "name": "Osaurus Git",
-  "description": "Git repository utilities for Osaurus",
-  "homepage": "https://github.com/osaurus-ai/osaurus-tools",
+  "plugin_id": "project2501.git",
+  "name": "Project2501 Git",
+  "description": "Git repository utilities for Project2501",
+  "homepage": "https://github.com/CharAznableX/2501-OSX-tools",
   "license": "MIT",
-  "authors": ["Osaurus Team"],
+  "authors": ["Project2501 Team"],
   "capabilities": {
     "tools": [
       {

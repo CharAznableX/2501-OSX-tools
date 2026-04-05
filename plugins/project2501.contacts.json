@@ -1,11 +1,11 @@
 {
-  "plugin_id": "osaurus.contacts",
+  "plugin_id": "project2501.contacts",
   "name": "Contacts",
   "description": "Interact with macOS Contacts.app - get phone numbers, find contacts by name or phone",
-  "homepage": "https://github.com/osaurus-ai/osaurus-contacts",
+  "homepage": "https://github.com/project2501-ai/osaurus-contacts",
   "license": "MIT",
   "authors": [
-    "osaurus-ai"
+    "project2501-ai"
   ],
   "capabilities": {
     "tools": [
@@ -38,7 +38,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-contacts/releases/download/1.0.3/osaurus.contacts-1.0.3-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-contacts/releases/download/1.0.3/osaurus.contacts-1.0.3-macos-arm64.zip",
           "sha256": "a72f0f42f29ae5420352b21d30987d4bc73637e9ed722c54a19561dbccfeab6f",
           "min_macos": "13.0",
           "minisign": {

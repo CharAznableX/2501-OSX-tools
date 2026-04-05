@@ -1,10 +1,10 @@
 {
-  "plugin_id": "osaurus.calendar",
+  "plugin_id": "project2501.calendar",
   "name": "Calendar",
   "description": "Interact with macOS Calendar.app - get events, search, create events, and open events",
-  "homepage": "https://github.com/osaurus-ai/osaurus-calendar",
+  "homepage": "https://github.com/project2501-ai/osaurus-calendar",
   "license": "MIT",
-  "authors": ["osaurus-ai"],
+  "authors": ["project2501-ai"],
   "capabilities": {
     "tools": [
       {
@@ -38,7 +38,7 @@
           "os": "macos",
           "arch": "arm64",
           "min_macos": "13.0",
-          "url": "https://github.com/osaurus-ai/osaurus-calendar/releases/download/1.0.4/osaurus.calendar-1.0.4.zip",
+          "url": "https://github.com/project2501-ai/osaurus-calendar/releases/download/1.0.4/osaurus.calendar-1.0.4.zip",
           "sha256": "e1d4215d1ff78f75ca82a9da0905db5e583d3fa77faad6ad84f75d2352644bc2",
           "size": 51935,
           "minisign": {
@@ -54,7 +54,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-calendar/releases/download/1.0.6/osaurus.calendar-1.0.6-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-calendar/releases/download/1.0.6/osaurus.calendar-1.0.6-macos-arm64.zip",
           "sha256": "569ac65d9fee2250bd3c03a160da5e3f1caf53c75c10e098ed4d2a4e53f76f47",
           "min_macos": "13.0",
           "minisign": {
@@ -70,7 +70,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-calendar/releases/download/1.0.7/osaurus.calendar-1.0.7-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-calendar/releases/download/1.0.7/osaurus.calendar-1.0.7-macos-arm64.zip",
           "sha256": "509feb9f12176e51bf17d0e7cc3ad34093d4be65a6e8907b070564fbb61e5f1f",
           "min_macos": "13.0",
           "minisign": {

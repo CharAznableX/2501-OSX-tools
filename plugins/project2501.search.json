@@ -1,10 +1,10 @@
 {
-  "plugin_id": "osaurus.search",
-  "name": "Osaurus Search",
+  "plugin_id": "project2501.search",
+  "name": "Project2501 Search",
   "description": "Web search using DuckDuckGo (no API key required)",
-  "homepage": "https://github.com/osaurus-ai/osaurus-tools",
+  "homepage": "https://github.com/CharAznableX/2501-OSX-tools",
   "license": "MIT",
-  "authors": ["Osaurus Team"],
+  "authors": ["Project2501 Team"],
   "capabilities": {
     "tools": [
       {

@@ -1,8 +1,8 @@
 {
-  "plugin_id": "osaurus.telegram",
+  "plugin_id": "project2501.telegram",
   "name": "Telegram",
-  "description": "Connect Telegram chats to your Osaurus agents",
-  "homepage": "https://github.com/osaurus-ai/osaurus-telegram",
+  "description": "Connect Telegram chats to your Project2501 agents",
+  "homepage": "https://github.com/project2501-ai/osaurus-telegram",
   "license": "MIT",
   "authors": [],
   "capabilities": {
@@ -21,7 +21,7 @@
       },
       {
         "name": "telegram_send_file",
-        "description": "Upload a file (photo or document) to a Telegram chat. Reads files from Osaurus artifact paths."
+        "description": "Upload a file (photo or document) to a Telegram chat. Reads files from Project2501 artifact paths."
       }
     ],
     "routes": [
@@ -50,7 +50,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.0/osaurus.telegram-1.0.0-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.0/osaurus.telegram-1.0.0-macos-arm64.zip",
           "sha256": "9759b3ebf3dfffe59b379083faf210401ef41d4e4f5fa71cca6f9561b4ceddbd",
           "min_macos": "15.0",
           "minisign": {
@@ -66,7 +66,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.1/osaurus.telegram-1.0.1-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.1/osaurus.telegram-1.0.1-macos-arm64.zip",
           "sha256": "6f4d4f1f781d35db161882d039211bd72874ca76dc336f43275a506826ac7dcf",
           "min_macos": "15.0",
           "minisign": {
@@ -82,7 +82,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.10/osaurus.telegram-1.0.10-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.10/osaurus.telegram-1.0.10-macos-arm64.zip",
           "sha256": "0c46a452de59517498e440dc447fad051fc4952448810dc30dc446f98764567c",
           "min_macos": "15.0",
           "minisign": {
@@ -98,7 +98,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.11/osaurus.telegram-1.0.11-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.11/osaurus.telegram-1.0.11-macos-arm64.zip",
           "sha256": "603976100cd558e08d5e5ae32a63f6b760ae52bf67f710710807a8ade80ffa50",
           "min_macos": "15.0",
           "minisign": {
@@ -114,7 +114,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.12/osaurus.telegram-1.0.12-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.12/osaurus.telegram-1.0.12-macos-arm64.zip",
           "sha256": "07998ec745ef39e566457743138a251f1814b738e8a7166b58a6ab83917c1b99",
           "min_macos": "15.0",
           "minisign": {
@@ -130,7 +130,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.13/osaurus.telegram-1.0.13-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.13/osaurus.telegram-1.0.13-macos-arm64.zip",
           "sha256": "222d1aea10e8ac891d2420c6c7cc06e5be8c1ab75a498d5764e27e01da6d605e",
           "min_macos": "15.0",
           "minisign": {
@@ -146,7 +146,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.2/osaurus.telegram-1.0.2-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.2/osaurus.telegram-1.0.2-macos-arm64.zip",
           "sha256": "1b0de0bfb6590d4ed100a18868b630f9534bc81635345c019244876a2d7c5ee8",
           "min_macos": "15.0",
           "minisign": {
@@ -162,7 +162,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.3/osaurus.telegram-1.0.3-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.3/osaurus.telegram-1.0.3-macos-arm64.zip",
           "sha256": "56de200afd100340dad548b1ded650c6bea0058a26182a510635c14dba68edc0",
           "min_macos": "15.0",
           "minisign": {
@@ -178,7 +178,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.4/osaurus.telegram-1.0.4-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.4/osaurus.telegram-1.0.4-macos-arm64.zip",
           "sha256": "ea2a168cea8faddd558a8c0d9aede521401b3f306c705049cb97c9af222e2f8b",
           "min_macos": "15.0",
           "minisign": {
@@ -194,7 +194,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.5/osaurus.telegram-1.0.5-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.5/osaurus.telegram-1.0.5-macos-arm64.zip",
           "sha256": "a86ccc7d975bab91b93fdd4ffd112b16719bb1c1680f14b3fa681d4ee694f51e",
           "min_macos": "15.0",
           "minisign": {
@@ -210,7 +210,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.6/osaurus.telegram-1.0.6-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.6/osaurus.telegram-1.0.6-macos-arm64.zip",
           "sha256": "78bb4fa2e499247b73e19487089723adb73ad70ad7bfe467f413bc41bdf4ce83",
           "min_macos": "15.0",
           "minisign": {
@@ -226,7 +226,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.7/osaurus.telegram-1.0.7-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.7/osaurus.telegram-1.0.7-macos-arm64.zip",
           "sha256": "8c62a2a9c33d1450109fe64206e90cead6ac276c526fcfa844414c1290ca184e",
           "min_macos": "15.0",
           "minisign": {
@@ -242,7 +242,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.8/osaurus.telegram-1.0.8-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.8/osaurus.telegram-1.0.8-macos-arm64.zip",
           "sha256": "532661857593c4fdd7b5a1289726a4c05aa8138c4b893fc783dcdf0558549a77",
           "min_macos": "15.0",
           "minisign": {
@@ -258,7 +258,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.0.9/osaurus.telegram-1.0.9-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.0.9/osaurus.telegram-1.0.9-macos-arm64.zip",
           "sha256": "cd4be1c9634e8ff542a391f613ea51544ed7e271d0718808f09956529dd50bdc",
           "min_macos": "15.0",
           "minisign": {
@@ -274,7 +274,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.1.0/osaurus.telegram-1.1.0-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.1.0/osaurus.telegram-1.1.0-macos-arm64.zip",
           "sha256": "938c0a84771c634d5366b0faf0744dd4b548050876215d00d0c9ea0342662fcb",
           "min_macos": "15.0",
           "minisign": {
@@ -290,7 +290,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-telegram/releases/download/1.1.1/osaurus.telegram-1.1.1-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-telegram/releases/download/1.1.1/osaurus.telegram-1.1.1-macos-arm64.zip",
           "sha256": "38a92021e238ede44c685d79d8a3207968b1bf0fe0db3153fdb25e159089726c",
           "min_macos": "15.0",
           "minisign": {

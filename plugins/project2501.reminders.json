@@ -1,10 +1,10 @@
 {
-  "plugin_id": "osaurus.reminders",
+  "plugin_id": "project2501.reminders",
   "name": "Reminders",
   "description": "Interact with macOS Reminders.app - get reminders, search, create reminders, and manage lists",
-  "homepage": "https://github.com/osaurus-ai/osaurus-reminders",
+  "homepage": "https://github.com/project2501-ai/osaurus-reminders",
   "license": "MIT",
-  "authors": ["osaurus-ai"],
+  "authors": ["project2501-ai"],
   "capabilities": {
     "tools": [
       {
@@ -46,7 +46,7 @@
           "os": "macos",
           "arch": "arm64",
           "min_macos": "13.0",
-          "url": "https://github.com/osaurus-ai/osaurus-reminders/releases/download/1.0.0/osaurus.reminders-1.0.0.zip",
+          "url": "https://github.com/project2501-ai/osaurus-reminders/releases/download/1.0.0/osaurus.reminders-1.0.0.zip",
           "sha256": "8a3af449cdd3a8dfdfa9a1a3861680c001ad34b7dd824889cbb9d480e80bbab6",
           "size": 63397,
           "minisign": {
@@ -62,7 +62,7 @@
         {
           "os": "macos",
           "arch": "arm64",
-          "url": "https://github.com/osaurus-ai/osaurus-reminders/releases/download/1.0.1/osaurus.reminders-1.0.1-macos-arm64.zip",
+          "url": "https://github.com/project2501-ai/osaurus-reminders/releases/download/1.0.1/osaurus.reminders-1.0.1-macos-arm64.zip",
           "sha256": "3a34c50eb2bfe00d5a3989722c65c7ce9943cf963f5010181515672c7961474e",
           "min_macos": "13.0",
           "minisign": {
