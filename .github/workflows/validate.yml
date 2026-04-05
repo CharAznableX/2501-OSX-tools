@@ -23,8 +23,8 @@ jobs:
       - name: Get changed plugins
         id: changes
         run: |
-          # Get list of changed plugin files
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'plugins/*.json' | head -1)
+          # Get list of changed plugin files (only added/modified, not deleted)
+          CHANGED=$(git diff --name-only --diff-filter=AM HEAD~1 HEAD -- 'plugins/*.json' | head -1)
           if [ -z "$CHANGED" ]; then
             echo "No plugin changes detected"
             echo "skip=true" >> $GITHUB_OUTPUT
