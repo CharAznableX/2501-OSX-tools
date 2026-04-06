@@ -300,6 +300,38 @@
       ]
     }
   ],
+    "secrets": [
+    {
+      "id": "bot_token",
+      "name": "Bot Token",
+      "description": "Telegram bot token from @BotFather",
+      "required": true,
+      "type": "secret"
+    }
+  ],
+  "config": [
+    {
+      "id": "allowed_users",
+      "name": "Allowed Users",
+      "description": "Comma-separated Telegram usernames (e.g. @alice, @bob). Leave blank to allow everyone.",
+      "type": "text",
+      "default": ""
+    },
+    {
+      "id": "send_typing",
+      "name": "Send Typing Indicator",
+      "description": "Show typing indicator while agent works",
+      "type": "toggle",
+      "default": true
+    },
+    {
+      "id": "send_progress",
+      "name": "Send Progress Updates",
+      "description": "Edit status message with activity/progress text",
+      "type": "toggle",
+      "default": false
+    }
+  ],
   "docs": {
     "readme": "README.md",
     "links": [
